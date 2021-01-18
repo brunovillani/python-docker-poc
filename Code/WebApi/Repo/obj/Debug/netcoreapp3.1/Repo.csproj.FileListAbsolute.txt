@@ -1,0 +1,5 @@
+C:\Projects\Todo-App\Code\WebApi\Repo\bin\Debug\netcoreapp3.1\Repo.deps.json
+C:\Projects\Todo-App\Code\WebApi\Repo\bin\Debug\netcoreapp3.1\Repo.dll
+C:\Projects\Todo-App\Code\WebApi\Repo\obj\Debug\netcoreapp3.1\Repo.csprojAssemblyReference.cache
+C:\Projects\Todo-App\Code\WebApi\Repo\obj\Debug\netcoreapp3.1\Repo.AssemblyInfoInputs.cache
+C:\Projects\Todo-App\Code\WebApi\Repo\obj\Debug\netcoreapp3.1\Repo.AssemblyInfo.cs

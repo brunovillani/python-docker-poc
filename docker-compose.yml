@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+  
+  sql-server:
+    build:
+      context: .
+      dockerfile: ./Sql.Dockerfile
+    image: sql-server-image
+    container_name: mssql-server
+    hostname: docker-mssql
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=myS3cr3tPassw0rd"
+    ports:
+      - "5001:1433"
+  
+  django-server:
+    build:
+      context: .
+      dockerfile: ./Python.Dockerfile
+    image: django-image
+    container_name: django-web-server
+    restart: always
+    working_dir: /app
+    volumes:
+      - type: bind
+        source: "./Code/Django"
+        target: /app
+    ports:
+      - "8000:8000"
+    command: python manage.py runserver 0.0.0.0:8000
+
+  # webapi-server:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Webapi.Dockerfile
+  #   image: webapi-image
+  #   container_name: dotnet-webapi-server
+  #   restart: always
+  #   working_dir: /Webapi/Api
+  #   volumes:
+  #     - type: bind
+  #       source: "./Code/Webapi"
+  #       target: /Webapi
+  #   ports:
+  #     - "5002:5002"
+  #   command: dotnet watch run --launch-profile "Api"
